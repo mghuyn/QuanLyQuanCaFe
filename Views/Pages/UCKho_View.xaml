@@ -1,0 +1,1266 @@
+﻿<UserControl x:Class="QuanLyQuanCaFe.Views.Pages.UCKho_View"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             Background="#F5F7FB">
+
+    <UserControl.Resources>
+        <BooleanToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
+
+        <Style x:Key="CardStyle" TargetType="Border">
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="CornerRadius" Value="24"/>
+            <Setter Property="Padding" Value="18"/>
+        </Style>
+
+        <Style x:Key="PrimaryButton" TargetType="Button">
+            <Setter Property="Height" Value="42"/>
+            <Setter Property="Background" Value="#0B63F6"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Cursor" Value="Hand"/>
+        </Style>
+
+        <Style x:Key="DangerButton" TargetType="Button">
+            <Setter Property="Height" Value="42"/>
+            <Setter Property="Background" Value="#FEE2E2"/>
+            <Setter Property="Foreground" Value="#DC2626"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Cursor" Value="Hand"/>
+        </Style>
+
+        <Style x:Key="DarkButton" TargetType="Button">
+            <Setter Property="Height" Value="44"/>
+            <Setter Property="Background" Value="#111827"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Cursor" Value="Hand"/>
+        </Style>
+
+        <Style x:Key="LightButton" TargetType="Button">
+            <Setter Property="Height" Value="42"/>
+            <Setter Property="Background" Value="#F1F5F9"/>
+            <Setter Property="Foreground" Value="#0F172A"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Cursor" Value="Hand"/>
+        </Style>
+    </UserControl.Resources>
+
+    <Grid Margin="14">
+        <TabControl Background="Transparent"
+                    BorderThickness="0"
+                    Padding="0">
+
+            <!-- TAB 1: TỒN KHO -->
+            <TabItem Header="Tồn kho">
+                <Grid Margin="0,12,0,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <!-- HEADER -->
+                    <Border Grid.Row="0"
+                            Style="{StaticResource CardStyle}"
+                            Margin="0,0,0,14">
+                        <DockPanel LastChildFill="False">
+                            <StackPanel DockPanel.Dock="Left">
+                                <TextBlock Text="Tồn kho nguyên liệu"
+                                           FontSize="26"
+                                           FontWeight="Bold"
+                                           Foreground="#0F172A"/>
+
+                               
+                            </StackPanel>
+
+                            <Button Content="↻ Làm mới"
+                                    Width="120"
+                                    Style="{StaticResource PrimaryButton}"
+                                    DockPanel.Dock="Right"
+                                    Command="{Binding LamMoiCommand}"/>
+                        </DockPanel>
+                    </Border>
+
+                    <!-- FILTER + SUMMARY -->
+                    <Grid Grid.Row="1"
+                          Margin="0,0,0,14">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1.55*"/>
+                            <ColumnDefinition Width="1*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <!-- FILTER -->
+                        <Border Grid.Column="0"
+                                Style="{StaticResource CardStyle}"
+                                Margin="0,0,14,0">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="180"/>
+                                    <ColumnDefinition Width="160"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Border Grid.Column="0"
+                                        Height="44"
+                                        Background="#F8FAFC"
+                                        CornerRadius="16"
+                                        Padding="12,0"
+                                        Margin="0,0,12,0">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="28"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+
+                                        <TextBlock Text="🔍"
+                                                   FontSize="14"
+                                                   VerticalAlignment="Center"
+                                                   HorizontalAlignment="Center"/>
+
+                                        <TextBox Grid.Column="1"
+                                                 Text="{Binding TuKhoa, UpdateSourceTrigger=PropertyChanged}"
+                                                 BorderThickness="0"
+                                                 Background="Transparent"
+                                                 FontSize="13"
+                                                 Padding="6,0,0,0"
+                                                 VerticalContentAlignment="Center"/>
+                                    </Grid>
+                                </Border>
+
+                                <ComboBox Grid.Column="1"
+                                          Height="44"
+                                          Margin="0,0,12,0"
+                                          ItemsSource="{Binding DanhMucs}"
+                                          SelectedItem="{Binding DanhMucDangChon, Mode=TwoWay}"/>
+
+                                <ComboBox Grid.Column="2"
+                                          Height="44"
+                                          ItemsSource="{Binding TrangThaiFilters}"
+                                          SelectedItem="{Binding TrangThaiDangChon, Mode=TwoWay}"/>
+                            </Grid>
+                        </Border>
+
+                        <!-- SUMMARY CARDS -->
+                        <UniformGrid Grid.Column="1"
+                                     Columns="4">
+
+                            <Border Background="White"
+                                    CornerRadius="22"
+                                    Padding="14"
+                                    Margin="0,0,10,0">
+                                <StackPanel>
+                                    <TextBlock Text="Tổng"
+                                               FontSize="12"
+                                               Foreground="#64748B"/>
+                                    <TextBlock Text="{Binding TongNguyenLieu, Mode=OneWay}"
+                                               FontSize="22"
+                                               FontWeight="Bold"
+                                               Foreground="#0F172A"
+                                               Margin="0,6,0,0"/>
+                                </StackPanel>
+                            </Border>
+
+                            <Border Background="#FFF7ED"
+                                    CornerRadius="22"
+                                    Padding="14"
+                                    Margin="0,0,10,0">
+                                <StackPanel>
+                                    <TextBlock Text="Tồn thấp"
+                                               FontSize="12"
+                                               Foreground="#9A3412"/>
+                                    <TextBlock Text="{Binding SoLuongCanhBao, Mode=OneWay}"
+                                               FontSize="22"
+                                               FontWeight="Bold"
+                                               Foreground="#EA580C"
+                                               Margin="0,6,0,0"/>
+                                </StackPanel>
+                            </Border>
+
+                            <Border Background="#FEF2F2"
+                                    CornerRadius="22"
+                                    Padding="14"
+                                    Margin="0,0,10,0">
+                                <StackPanel>
+                                    <TextBlock Text="Hết"
+                                               FontSize="12"
+                                               Foreground="#991B1B"/>
+                                    <TextBlock Text="{Binding SoLuongHetHang, Mode=OneWay}"
+                                               FontSize="22"
+                                               FontWeight="Bold"
+                                               Foreground="#DC2626"
+                                               Margin="0,6,0,0"/>
+                                </StackPanel>
+                            </Border>
+
+                            <Border Background="#EFF6FF"
+                                    CornerRadius="22"
+                                    Padding="14">
+                                <StackPanel>
+                                    <TextBlock Text="Giá trị"
+                                               FontSize="12"
+                                               Foreground="#1D4ED8"/>
+                                    <TextBlock Text="{Binding TongGiaTriTonText, Mode=OneWay}"
+                                               FontSize="16"
+                                               FontWeight="Bold"
+                                               Foreground="#0B63F6"
+                                               Margin="0,8,0,0"/>
+                                </StackPanel>
+                            </Border>
+                        </UniformGrid>
+                    </Grid>
+
+                    <!-- LIST -->
+                    <Border Grid.Row="2"
+                            Style="{StaticResource CardStyle}">
+                        <ScrollViewer VerticalScrollBarVisibility="Auto">
+                            <ItemsControl ItemsSource="{Binding DanhSachKho}">
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate>
+                                        <Border Background="#F8FAFC"
+                                                BorderBrush="#E2E8F0"
+                                                BorderThickness="1"
+                                                CornerRadius="20"
+                                                Padding="14"
+                                                Margin="0,0,0,12">
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="70"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                    <ColumnDefinition Width="220"/>
+                                                    <ColumnDefinition Width="150"/>
+                                                </Grid.ColumnDefinitions>
+
+                                                <Border Width="54"
+                                                        Height="54"
+                                                        Background="White"
+                                                        CornerRadius="16"
+                                                        ClipToBounds="True">
+                                                    <Grid>
+                                                        <Image Source="{Binding HinhAnh}"
+                                                               Stretch="Uniform"
+                                                               HorizontalAlignment="Center"
+                                                               VerticalAlignment="Center"/>
+
+                                                        <TextBlock Text="📦"
+                                                                   FontSize="22"
+                                                                   Opacity="0.16"
+                                                                   HorizontalAlignment="Center"
+                                                                   VerticalAlignment="Center"/>
+                                                    </Grid>
+                                                </Border>
+
+                                                <StackPanel Grid.Column="1"
+                                                            VerticalAlignment="Center"
+                                                            Margin="4,0,20,0">
+                                                    <TextBlock Text="{Binding TenNguyenLieu}"
+                                                               FontSize="16"
+                                                               FontWeight="Bold"
+                                                               Foreground="#0F172A"
+                                                               TextWrapping="Wrap"/>
+
+                                                    <TextBlock Text="{Binding MaCodeNguyenLieu}"
+                                                               FontSize="12"
+                                                               Foreground="#64748B"
+                                                               Margin="0,5,0,0"/>
+
+                                                    <TextBlock Text="{Binding TenDanhMuc}"
+                                                               FontSize="12"
+                                                               Foreground="#64748B"
+                                                               Margin="0,2,0,0"/>
+
+                                                    <Grid Width="190"
+                                                          Height="8"
+                                                          Background="#E2E8F0"
+                                                          Margin="0,10,0,0"
+                                                          HorizontalAlignment="Left">
+                                                        <Border Width="{Binding DoRongThanhTon}"
+                                                                Background="#0B63F6"
+                                                                HorizontalAlignment="Left"
+                                                                CornerRadius="8"/>
+                                                    </Grid>
+                                                </StackPanel>
+
+                                                <StackPanel Grid.Column="2"
+                                                            VerticalAlignment="Center">
+                                                    <TextBlock Text="Tồn hiện tại"
+                                                               FontSize="11"
+                                                               Foreground="#64748B"/>
+
+                                                    <TextBlock Text="{Binding SoLuongText, Mode=OneWay}"
+                                                               FontSize="16"
+                                                               FontWeight="Bold"
+                                                               Foreground="#0F172A"
+                                                               TextWrapping="Wrap"
+                                                               Margin="0,4,0,0"/>
+
+                                                    <TextBlock Text="{Binding MucToiThieuText, Mode=OneWay}"
+                                                               FontSize="12"
+                                                               Foreground="#94A3B8"
+                                                               TextWrapping="Wrap"
+                                                               Margin="0,4,0,0"/>
+                                                </StackPanel>
+
+                                                <StackPanel Grid.Column="3"
+                                                            VerticalAlignment="Center"
+                                                            HorizontalAlignment="Right">
+                                                    <Border Background="{Binding TrangThaiBackground}"
+                                                            CornerRadius="12"
+                                                            Padding="10,5"
+                                                            HorizontalAlignment="Right">
+                                                        <TextBlock Text="{Binding TrangThaiText}"
+                                                                   Foreground="{Binding TrangThaiColor}"
+                                                                   FontWeight="SemiBold"
+                                                                   FontSize="12"/>
+                                                    </Border>
+
+                                                    <TextBlock Text="{Binding GiaNhapText, Mode=OneWay}"
+                                                               FontWeight="Bold"
+                                                               Foreground="#0B63F6"
+                                                               HorizontalAlignment="Right"
+                                                               Margin="0,8,0,0"/>
+
+                                                    <TextBlock Text="{Binding ViTriLuuKho}"
+                                                               FontSize="11"
+                                                               Foreground="#64748B"
+                                                               HorizontalAlignment="Right"
+                                                               Margin="0,4,0,0"/>
+                                                </StackPanel>
+                                            </Grid>
+                                        </Border>
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                            </ItemsControl>
+                        </ScrollViewer>
+                    </Border>
+                </Grid>
+            </TabItem>
+
+            <!-- TAB 2: TẠO PHIẾU -->
+            <TabItem Header="Tạo phiếu">
+                <Grid Margin="0,12,0,0">
+
+                    <!-- MAIN 2 COLUMNS -->
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="440"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <!-- LEFT: THÔNG TIN PHIẾU -->
+                        <Border Grid.Column="0"
+                    Background="White"
+                    CornerRadius="28"
+                    Padding="24"
+                    Margin="0,0,16,0">
+
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+
+                                <StackPanel Grid.Row="0">
+                                    <TextBlock Text="Thông tin phiếu"
+                                   FontSize="26"
+                                   FontWeight="Bold"
+                                   Foreground="#0F172A"/>
+
+                                    
+
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="12"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+
+                                        <Button Grid.Column="0"
+                                    Content="+ Phiếu nhập"
+                                    Height="46"
+                                    Background="#0B63F6"
+                                    Foreground="White"
+                                    BorderThickness="0"
+                                    FontWeight="Bold"
+                                    Command="{Binding TaoPhieuNhapCommand}"/>
+
+                                        <Button Grid.Column="2"
+                                    Content="+ Phiếu xuất"
+                                    Height="46"
+                                    Background="#FEE2E2"
+                                    Foreground="#DC2626"
+                                    BorderThickness="0"
+                                    FontWeight="Bold"
+                                    Command="{Binding TaoPhieuXuatCommand}"/>
+                                    </Grid>
+
+                                    <Border Background="#F8FAFC"
+                                CornerRadius="22"
+                                Padding="16"
+                                Margin="0,18,0,0">
+                                        <StackPanel>
+                                            <TextBlock Text="{Binding TieuDePhieu}"
+                                           FontSize="21"
+                                           FontWeight="Bold"
+                                           Foreground="#0F172A"/>
+
+                                            <TextBlock Text="{Binding TrangThaiLapPhieuText, Mode=OneWay}"
+                                           FontSize="12"
+                                           Foreground="#64748B"
+                                           Margin="0,5,0,0"/>
+                                        </StackPanel>
+                                    </Border>
+                                </StackPanel>
+
+                                <StackPanel Grid.Row="1"
+                                Margin="0,22,0,0">
+
+                                    <TextBlock Text="Ngày lập"
+                                   FontWeight="SemiBold"
+                                   Foreground="#334155"/>
+
+                                    <DatePicker SelectedDate="{Binding NgayLapPhieu, Mode=TwoWay}"
+                                    Height="44"
+                                    Margin="0,7,0,16"
+                                    Background="#F8FAFC"/>
+
+                                    <TextBlock Text="Nhà cung cấp"
+                                   FontWeight="SemiBold"
+                                   Foreground="#334155"/>
+
+                                    <ComboBox ItemsSource="{Binding NhaCungCaps}"
+                                  SelectedItem="{Binding NhaCungCapDangChon, Mode=TwoWay}"
+                                  DisplayMemberPath="TenNhaCungCap"
+                                  Height="44"
+                                  Margin="0,7,0,16"/>
+
+                                    <TextBlock Text="Ghi chú"
+           FontWeight="SemiBold"
+           Foreground="#334155"/>
+
+                                    <TextBox Text="{Binding GhiChu, UpdateSourceTrigger=PropertyChanged}"
+         Height="80"
+         Margin="0,7,0,14"
+         Padding="12"
+         Background="#F8FAFC"
+         BorderThickness="0"
+         TextWrapping="Wrap"
+         AcceptsReturn="True"/>
+
+                                   
+                                </StackPanel>
+
+                                <StackPanel Grid.Row="2">
+
+                                    <Button Content="+ Thêm nguyên liệu"
+            Height="48"
+            Background="#111827"
+            Foreground="White"
+            BorderThickness="0"
+            FontWeight="Bold"
+            Margin="0,0,0,10"
+            Command="{Binding MoChonNguyenLieuCommand}"/>
+
+                                    <Button Content="Hủy / Reset phiếu"
+            Height="44"
+            Background="#F1F5F9"
+            Foreground="#0F172A"
+            BorderThickness="0"
+            FontWeight="Bold"
+            Command="{Binding HuyPhieuCommand}"/>
+                                </StackPanel>
+                            </Grid>
+                        </Border>
+
+                        <!-- RIGHT: CHI TIẾT PHIẾU -->
+                        <Border Grid.Column="1"
+                    Background="White"
+                    CornerRadius="28"
+                    Padding="24">
+
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+
+                                <StackPanel Grid.Row="0">
+                                    <TextBlock Text="Chi tiết phiếu"
+                                   FontSize="26"
+                                   FontWeight="Bold"
+                                   Foreground="#0F172A"/>
+
+                                   
+                                </StackPanel>
+
+                                <!-- SELECTED MATERIAL -->
+                                <Border Grid.Row="1"
+                            Background="#F8FAFC"
+                            CornerRadius="24"
+                            Padding="18"
+                            Margin="0,0,0,18">
+
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="72"/>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="180"/>
+                                        </Grid.ColumnDefinitions>
+
+                                        <Border Width="58"
+                                    Height="58"
+                                    Background="White"
+                                    CornerRadius="18">
+                                            <TextBlock Text="📦"
+                                           FontSize="28"
+                                           HorizontalAlignment="Center"
+                                           VerticalAlignment="Center"
+                                           Opacity="0.42"/>
+                                        </Border>
+
+                                        <StackPanel Grid.Column="1"
+                                        VerticalAlignment="Center">
+                                            <TextBlock Text="Nguyên liệu đang chọn"
+                                           FontSize="12"
+                                           Foreground="#64748B"/>
+
+                                            <TextBlock Text="{Binding NguyenLieuDangChon.TenNguyenLieu}"
+                                           FontSize="20"
+                                           FontWeight="Bold"
+                                           Foreground="#0F172A"
+                                           TextWrapping="Wrap"
+                                           Margin="0,5,0,0"/>
+
+                                            <TextBlock Text="{Binding NguyenLieuDangChon.SoLuongText, Mode=OneWay}"
+                                           FontSize="13"
+                                           Foreground="#64748B"
+                                           TextWrapping="Wrap"
+                                           Margin="0,5,0,0"/>
+                                        </StackPanel>
+
+                                        <StackPanel Grid.Column="2"
+                                        VerticalAlignment="Center">
+                                            <TextBlock Text="Số lượng"
+                                           FontWeight="SemiBold"
+                                           Foreground="#334155"/>
+
+                                            <TextBox Text="{Binding SoLuongNhapXuat, UpdateSourceTrigger=PropertyChanged}"
+                                         Height="40"
+                                         Margin="0,6,0,10"
+                                         Padding="12,0"
+                                         VerticalContentAlignment="Center"
+                                         Background="White"
+                                         BorderThickness="0"/>
+
+                                            <TextBlock Text="Đơn giá nhập"
+                                           FontWeight="SemiBold"
+                                           Foreground="#334155"/>
+
+                                            <TextBox Text="{Binding DonGiaNhap, UpdateSourceTrigger=PropertyChanged}"
+                                         Height="40"
+                                         Margin="0,6,0,0"
+                                         Padding="12,0"
+                                         VerticalContentAlignment="Center"
+                                         Background="White"
+                                         BorderThickness="0"/>
+                                        </StackPanel>
+                                    </Grid>
+                                </Border>
+
+                                <!-- CURRENT DETAIL -->
+                                <Border Grid.Row="2"
+                            Background="#F8FAFC"
+                            CornerRadius="24"
+                            Padding="18">
+
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="*"/>
+                                        </Grid.RowDefinitions>
+
+                                        <DockPanel Grid.Row="0">
+                                            <StackPanel DockPanel.Dock="Left">
+                                                <TextBlock Text="Nguyên liệu trong phiếu"
+                                               FontSize="18"
+                                               FontWeight="Bold"
+                                               Foreground="#0F172A"/>
+
+                                                <TextBlock Text="{Binding TongSoDongPhieu, Mode=OneWay, StringFormat=Số dòng: {0}}"
+                                               FontSize="12"
+                                               Foreground="#64748B"
+                                               Margin="0,4,0,0"/>
+                                            </StackPanel>
+
+                                            <StackPanel DockPanel.Dock="Right">
+                                                <TextBlock Text="Tổng tiền"
+                                               FontSize="12"
+                                               Foreground="#64748B"
+                                               HorizontalAlignment="Right"/>
+
+                                                <TextBlock Text="{Binding TongTienPhieuText, Mode=OneWay}"
+                                               FontSize="20"
+                                               FontWeight="Bold"
+                                               Foreground="#0B63F6"
+                                               HorizontalAlignment="Right"/>
+                                            </StackPanel>
+                                        </DockPanel>
+
+                                        <ScrollViewer Grid.Row="1"
+                                          Margin="0,16,0,0"
+                                          VerticalScrollBarVisibility="Auto">
+
+                                            <ItemsControl ItemsSource="{Binding ChiTietPhieuTam}">
+                                                <ItemsControl.ItemTemplate>
+                                                    <DataTemplate>
+                                                        <Border Background="White"
+                                                    BorderBrush="#E2E8F0"
+                                                    BorderThickness="1"
+                                                    CornerRadius="18"
+                                                    Padding="12"
+                                                    Margin="0,0,0,10">
+
+                                                            <Grid>
+                                                                <Grid.ColumnDefinitions>
+                                                                    <ColumnDefinition Width="*"/>
+                                                                    <ColumnDefinition Width="150"/>
+                                                                    <ColumnDefinition Width="32"/>
+                                                                </Grid.ColumnDefinitions>
+
+                                                                <StackPanel Grid.Column="0">
+                                                                    <TextBlock Text="{Binding TenNguyenLieu}"
+                                                                   FontWeight="Bold"
+                                                                   FontSize="14"
+                                                                   Foreground="#0F172A"
+                                                                   TextWrapping="Wrap"/>
+
+                                                                    <TextBlock Text="{Binding SoLuongText, Mode=OneWay}"
+                                                                   FontSize="12"
+                                                                   Foreground="#64748B"
+                                                                   Margin="0,4,0,0"/>
+                                                                </StackPanel>
+
+                                                                <StackPanel Grid.Column="1"
+                                                                HorizontalAlignment="Right">
+                                                                    <TextBlock Text="{Binding DonGiaText, Mode=OneWay}"
+                                                                   FontSize="12"
+                                                                   Foreground="#64748B"
+                                                                   HorizontalAlignment="Right"/>
+
+                                                                    <TextBlock Text="{Binding ThanhTienText, Mode=OneWay}"
+                                                                   FontSize="14"
+                                                                   FontWeight="Bold"
+                                                                   Foreground="#0B63F6"
+                                                                   HorizontalAlignment="Right"
+                                                                   Margin="0,4,0,0"/>
+                                                                </StackPanel>
+
+                                                                <Button Grid.Column="2"
+                                                            Content="×"
+                                                            Width="28"
+                                                            Height="28"
+                                                            Background="#FEE2E2"
+                                                            Foreground="#DC2626"
+                                                            BorderThickness="0"
+                                                            FontWeight="Bold"
+                                                            Command="{Binding DataContext.XoaDongPhieuCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                                            CommandParameter="{Binding}"/>
+                                                            </Grid>
+                                                        </Border>
+                                                    </DataTemplate>
+                                                </ItemsControl.ItemTemplate>
+                                            </ItemsControl>
+                                        </ScrollViewer>
+                                    </Grid>
+                                </Border>
+
+                                <!-- FOOTER ACTION -->
+                                <Grid Grid.Row="3"
+                          Margin="0,18,0,0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="12"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="12"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Button Grid.Column="0"
+                                Content="{Binding NoiDungNutThemDong, Mode=OneWay}"
+                                Height="46"
+                                Background="#0B63F6"
+                                Foreground="White"
+                                BorderThickness="0"
+                                FontWeight="Bold"
+                                Command="{Binding ThemDongPhieuCommand}"/>
+
+                                    <Button Grid.Column="2"
+                                Content="{Binding NoiDungNutLuuPhieu, Mode=OneWay}"
+                                Height="46"
+                                Background="#111827"
+                                Foreground="White"
+                                BorderThickness="0"
+                                FontWeight="Bold"
+                                Command="{Binding LuuPhieuCommand}"/>
+
+                                    <Button Grid.Column="4"
+                                Content="Hủy phiếu"
+                                Height="46"
+                                Background="#E5E7EB"
+                                Foreground="#111827"
+                                BorderThickness="0"
+                                FontWeight="Bold"
+                                Command="{Binding HuyPhieuCommand}"/>
+                                </Grid>
+                            </Grid>
+                        </Border>
+                    </Grid>
+
+                    <!-- POPUP CHỌN NGUYÊN LIỆU -->
+                    <Grid Background="#80000000"
+              Visibility="{Binding HienPopupNguyenLieu, Converter={StaticResource BoolToVisibilityConverter}}">
+
+                        <Border Width="880"
+                    Height="620"
+                    Background="White"
+                    CornerRadius="28"
+                    Padding="24"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center">
+
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+
+                                <DockPanel Grid.Row="0"
+                               LastChildFill="False">
+                                    <StackPanel DockPanel.Dock="Left">
+                                        <TextBlock Text="Chọn nguyên liệu"
+                                       FontSize="26"
+                                       FontWeight="Bold"
+                                       Foreground="#0F172A"/>
+
+                                    </StackPanel>
+
+                                    <Button Content="Đóng"
+                                Width="90"
+                                Height="40"
+                                Background="#F1F5F9"
+                                Foreground="#0F172A"
+                                BorderThickness="0"
+                                FontWeight="Bold"
+                                DockPanel.Dock="Right"
+                                Command="{Binding DongPopupNguyenLieuCommand}"/>
+                                </DockPanel>
+
+                                <Grid Grid.Row="1"
+                          Margin="0,20,0,16">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="220"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Border Grid.Column="0"
+                                Height="44"
+                                Background="#F8FAFC"
+                                CornerRadius="16"
+                                Padding="12,0"
+                                Margin="0,0,12,0">
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="28"/>
+                                                <ColumnDefinition Width="*"/>
+                                            </Grid.ColumnDefinitions>
+
+                                            <TextBlock Text="🔍"
+                                           VerticalAlignment="Center"
+                                           HorizontalAlignment="Center"/>
+
+                                            <TextBox Grid.Column="1"
+                                         Text="{Binding TuKhoaPopupNguyenLieu, UpdateSourceTrigger=PropertyChanged}"
+                                         BorderThickness="0"
+                                         Background="Transparent"
+                                         VerticalContentAlignment="Center"
+                                         Padding="6,0,0,0"
+                                         FontSize="13"/>
+                                        </Grid>
+                                    </Border>
+
+                                    <ComboBox Grid.Column="1"
+                                  Height="44"
+                                  ItemsSource="{Binding DanhMucs}"
+                                  SelectedItem="{Binding DanhMucPopupDangChon, Mode=TwoWay}"/>
+                                </Grid>
+
+                                <ScrollViewer Grid.Row="2"
+                                  VerticalScrollBarVisibility="Auto">
+
+                                    <ItemsControl ItemsSource="{Binding DanhSachNguyenLieuPopup}">
+                                        <ItemsControl.ItemsPanel>
+                                            <ItemsPanelTemplate>
+                                                <WrapPanel/>
+                                            </ItemsPanelTemplate>
+                                        </ItemsControl.ItemsPanel>
+
+                                        <ItemsControl.ItemTemplate>
+                                            <DataTemplate>
+                                                <Button Width="260"
+                                            Height="160"
+                                            Margin="0,0,14,14"
+                                            Background="Transparent"
+                                            BorderThickness="0"
+                                            Padding="0"
+                                            Cursor="Hand"
+                                            Command="{Binding DataContext.ChonNguyenLieuCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                            CommandParameter="{Binding}">
+
+                                                    <Border Background="#F8FAFC"
+                                                BorderBrush="#E2E8F0"
+                                                BorderThickness="1"
+                                                CornerRadius="22"
+                                                Padding="14">
+
+                                                        <Grid>
+                                                            <Grid.RowDefinitions>
+                                                                <RowDefinition Height="58"/>
+                                                                <RowDefinition Height="*"/>
+                                                                <RowDefinition Height="Auto"/>
+                                                            </Grid.RowDefinitions>
+
+                                                            <Border Width="58"
+                                                        Height="58"
+                                                        Background="White"
+                                                        CornerRadius="18"
+                                                        HorizontalAlignment="Left">
+                                                                <Grid>
+                                                                    <Image Source="{Binding HinhAnh}"
+                                                               Stretch="Uniform"
+                                                               HorizontalAlignment="Center"
+                                                               VerticalAlignment="Center"/>
+
+                                                                    <TextBlock Text="📦"
+                                                                   FontSize="24"
+                                                                   Opacity="0.18"
+                                                                   HorizontalAlignment="Center"
+                                                                   VerticalAlignment="Center"/>
+                                                                </Grid>
+                                                            </Border>
+
+                                                            <StackPanel Grid.Row="1"
+                                                            Margin="0,10,0,0">
+                                                                <TextBlock Text="{Binding TenNguyenLieu}"
+                                                               FontSize="15"
+                                                               FontWeight="Bold"
+                                                               Foreground="#0F172A"
+                                                               TextWrapping="Wrap"
+                                                               MaxHeight="42"/>
+
+                                                                <TextBlock Text="{Binding TenDanhMuc}"
+                                                               FontSize="12"
+                                                               Foreground="#64748B"
+                                                               Margin="0,5,0,0"
+                                                               TextWrapping="Wrap"/>
+
+                                                                <TextBlock Text="{Binding SoLuongText, Mode=OneWay}"
+                                                               FontSize="12"
+                                                               Foreground="#0B63F6"
+                                                               FontWeight="Bold"
+                                                               Margin="0,5,0,0"
+                                                               TextWrapping="Wrap"/>
+                                                            </StackPanel>
+
+                                                            <DockPanel Grid.Row="2"
+                                                           Margin="0,8,0,0">
+                                                                <Border Background="{Binding TrangThaiBackground}"
+                                                            CornerRadius="11"
+                                                            Padding="8,4"
+                                                            DockPanel.Dock="Left">
+                                                                    <TextBlock Text="{Binding TrangThaiText}"
+                                                                   Foreground="{Binding TrangThaiColor}"
+                                                                   FontSize="11"
+                                                                   FontWeight="SemiBold"/>
+                                                                </Border>
+
+                                                                <TextBlock Text="Chọn →"
+                                                               Foreground="#0B63F6"
+                                                               FontWeight="Bold"
+                                                               FontSize="12"
+                                                               DockPanel.Dock="Right"
+                                                               HorizontalAlignment="Right"/>
+                                                            </DockPanel>
+                                                        </Grid>
+                                                    </Border>
+                                                </Button>
+                                            </DataTemplate>
+                                        </ItemsControl.ItemTemplate>
+                                    </ItemsControl>
+                                </ScrollViewer>
+                            </Grid>
+                        </Border>
+                    </Grid>
+                </Grid>
+            </TabItem>
+
+            <!-- TAB 3: LỊCH SỬ PHIẾU -->
+            <TabItem Header="Lịch sử phiếu">
+                <Grid Margin="0,12,0,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <Border Grid.Row="0"
+                            Style="{StaticResource CardStyle}"
+                            Margin="0,0,0,14">
+                        <DockPanel LastChildFill="False">
+                            <StackPanel DockPanel.Dock="Left">
+                                <TextBlock Text="Lịch sử phiếu kho"
+                                           FontSize="26"
+                                           FontWeight="Bold"
+                                           Foreground="#0F172A"/>
+
+                               
+                            </StackPanel>
+
+                            <Button Content="↻ Làm mới"
+                                    Width="120"
+                                    Style="{StaticResource PrimaryButton}"
+                                    DockPanel.Dock="Right"
+                                    Command="{Binding LamMoiLichSuCommand}"/>
+                        </DockPanel>
+                    </Border>
+
+                    <Grid Grid.Row="1"
+                          Margin="0,0,0,14">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1.4*"/>
+                            <ColumnDefinition Width="1*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Border Grid.Column="0"
+                                Style="{StaticResource CardStyle}"
+                                Margin="0,0,14,0">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="180"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Border Grid.Column="0"
+                                        Height="42"
+                                        Background="#F8FAFC"
+                                        CornerRadius="14"
+                                        Padding="12,0"
+                                        Margin="0,0,10,0">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="24"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+
+                                        <TextBlock Text="🔍"
+                                                   VerticalAlignment="Center"
+                                                   HorizontalAlignment="Center"/>
+
+                                        <TextBox Grid.Column="1"
+                                                 Text="{Binding TuKhoaPhieu, UpdateSourceTrigger=PropertyChanged}"
+                                                 BorderThickness="0"
+                                                 Background="Transparent"
+                                                 VerticalContentAlignment="Center"
+                                                 Padding="6,0,0,0"
+                                                 FontSize="13"/>
+                                    </Grid>
+                                </Border>
+
+                                <ComboBox Grid.Column="1"
+                                          Height="42"
+                                          ItemsSource="{Binding LoaiPhieuFilters}"
+                                          SelectedItem="{Binding LoaiPhieuLoc, Mode=TwoWay}"/>
+                            </Grid>
+                        </Border>
+
+                        <UniformGrid Grid.Column="1"
+                                     Columns="4">
+                            <Border Background="White"
+                                    CornerRadius="20"
+                                    Padding="14"
+                                    Margin="0,0,10,0">
+                                <StackPanel>
+                                    <TextBlock Text="Tổng"
+                                               FontSize="12"
+                                               Foreground="#64748B"/>
+                                    <TextBlock Text="{Binding TongSoPhieu, Mode=OneWay}"
+                                               FontSize="20"
+                                               FontWeight="Bold"
+                                               Margin="0,6,0,0"/>
+                                </StackPanel>
+                            </Border>
+
+                            <Border Background="#EFF6FF"
+                                    CornerRadius="20"
+                                    Padding="14"
+                                    Margin="0,0,10,0">
+                                <StackPanel>
+                                    <TextBlock Text="Nhập"
+                                               FontSize="12"
+                                               Foreground="#1D4ED8"/>
+                                    <TextBlock Text="{Binding TongPhieuNhap, Mode=OneWay}"
+                                               FontSize="20"
+                                               FontWeight="Bold"
+                                               Foreground="#0B63F6"
+                                               Margin="0,6,0,0"/>
+                                </StackPanel>
+                            </Border>
+
+                            <Border Background="#FEE2E2"
+                                    CornerRadius="20"
+                                    Padding="14"
+                                    Margin="0,0,10,0">
+                                <StackPanel>
+                                    <TextBlock Text="Xuất"
+                                               FontSize="12"
+                                               Foreground="#991B1B"/>
+                                    <TextBlock Text="{Binding TongPhieuXuat, Mode=OneWay}"
+                                               FontSize="20"
+                                               FontWeight="Bold"
+                                               Foreground="#DC2626"
+                                               Margin="0,6,0,0"/>
+                                </StackPanel>
+                            </Border>
+
+                            <Border Background="#F0FDF4"
+                                    CornerRadius="20"
+                                    Padding="14">
+                                <StackPanel>
+                                    <TextBlock Text="Giá trị"
+                                               FontSize="12"
+                                               Foreground="#166534"/>
+                                    <TextBlock Text="{Binding TongGiaTriPhieuText, Mode=OneWay}"
+                                               FontSize="16"
+                                               FontWeight="Bold"
+                                               Foreground="#16A34A"
+                                               Margin="0,8,0,0"/>
+                                </StackPanel>
+                            </Border>
+                        </UniformGrid>
+                    </Grid>
+
+                    <Border Grid.Row="2"
+                            Style="{StaticResource CardStyle}">
+                        <ScrollViewer VerticalScrollBarVisibility="Auto">
+                            <ItemsControl ItemsSource="{Binding DanhSachPhieuKho}">
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate>
+                                        <Border Background="#F8FAFC"
+                                                BorderBrush="#E2E8F0"
+                                                BorderThickness="1"
+                                                CornerRadius="18"
+                                                Padding="14"
+                                                Margin="0,0,0,12">
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="180"/>
+                                                    <ColumnDefinition Width="150"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                    <ColumnDefinition Width="150"/>
+                                                </Grid.ColumnDefinitions>
+
+                                                <StackPanel Grid.Column="0">
+                                                    <TextBlock Text="{Binding MaCodePhieuKho}"
+                                                               FontSize="15"
+                                                               FontWeight="Bold"
+                                                               Foreground="#0F172A"/>
+
+                                                    <TextBlock Text="{Binding NgayLapText, Mode=OneWay}"
+                                                               FontSize="12"
+                                                               Foreground="#64748B"
+                                                               Margin="0,5,0,0"/>
+                                                </StackPanel>
+
+                                                <Border Grid.Column="1"
+                                                        Background="{Binding NenLoaiPhieu}"
+                                                        CornerRadius="12"
+                                                        Padding="10,5"
+                                                        HorizontalAlignment="Left"
+                                                        VerticalAlignment="Center">
+                                                    <TextBlock Text="{Binding LoaiPhieuText, Mode=OneWay}"
+                                                               Foreground="{Binding MauLoaiPhieu}"
+                                                               FontWeight="SemiBold"
+                                                               FontSize="12"/>
+                                                </Border>
+
+                                                <TextBlock Grid.Column="2"
+                                                           Text="{Binding GhiChu}"
+                                                           Foreground="#64748B"
+                                                           TextWrapping="Wrap"
+                                                           VerticalAlignment="Center"/>
+
+                                                <StackPanel Grid.Column="3"
+                                                            HorizontalAlignment="Right"
+                                                            VerticalAlignment="Center">
+                                                    <TextBlock Text="{Binding TongTienText, Mode=OneWay}"
+                                                               FontWeight="Bold"
+                                                               Foreground="#0B63F6"
+                                                               HorizontalAlignment="Right"/>
+
+                                                    <TextBlock Text="{Binding TrangThai}"
+                                                               FontSize="12"
+                                                               Foreground="#16A34A"
+                                                               HorizontalAlignment="Right"
+                                                               Margin="0,5,0,0"/>
+                                                </StackPanel>
+                                            </Grid>
+                                        </Border>
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                            </ItemsControl>
+                        </ScrollViewer>
+                    </Border>
+                </Grid>
+            </TabItem>
+
+
+            <!-- TAB 4: QUẢN LÝ NGUYÊN LIỆU -->
+            <TabItem Header="Nguyên liệu">
+                <Grid Margin="0,12,0,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="380"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Border Grid.Column="0" Style="{StaticResource CardStyle}" Margin="0,0,12,0">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+
+                            <DockPanel Grid.Row="0" Margin="0,0,0,14">
+                                <StackPanel DockPanel.Dock="Left">
+                                    <TextBlock Text="Danh sách nguyên liệu" FontSize="22" FontWeight="Bold" Foreground="#0F172A"/>
+                                    <TextBlock Text="Thêm, sửa, xóa nguyên liệu dùng cho kho và công thức" FontSize="12" Foreground="#64748B" Margin="0,4,0,0"/>
+                                </StackPanel>
+                                <Button Content="+ Thêm nguyên liệu" Width="160" Style="{StaticResource PrimaryButton}" DockPanel.Dock="Right" Command="{Binding BatDauThemNguyenLieuCommand}"/>
+                            </DockPanel>
+
+                            <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+                                <ItemsControl ItemsSource="{Binding DanhSachKho}">
+                                    <ItemsControl.ItemTemplate>
+                                        <DataTemplate>
+                                            <Button Background="Transparent" BorderThickness="0" Padding="0" Cursor="Hand"
+                                                    Command="{Binding DataContext.ChonNguyenLieuQuanLyCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                                    CommandParameter="{Binding}">
+                                                <Border Background="#F8FAFC" BorderBrush="#E2E8F0" BorderThickness="1" CornerRadius="18" Padding="14" Margin="0,0,0,10">
+                                                    <Grid>
+                                                        <Grid.ColumnDefinitions>
+                                                            <ColumnDefinition Width="*"/>
+                                                            <ColumnDefinition Width="150"/>
+                                                            <ColumnDefinition Width="130"/>
+                                                        </Grid.ColumnDefinitions>
+                                                        <StackPanel Grid.Column="0">
+                                                            <TextBlock Text="{Binding TenNguyenLieu}" FontSize="15" FontWeight="Bold" Foreground="#0F172A" TextWrapping="Wrap"/>
+                                                            <TextBlock Text="{Binding MaCodeNguyenLieu}" FontSize="12" Foreground="#64748B" Margin="0,4,0,0"/>
+                                                            <TextBlock Text="{Binding TenDanhMuc}" FontSize="12" Foreground="#64748B" Margin="0,2,0,0"/>
+                                                        </StackPanel>
+                                                        <StackPanel Grid.Column="1" VerticalAlignment="Center">
+                                                            <TextBlock Text="Tồn kho" FontSize="11" Foreground="#64748B"/>
+                                                            <TextBlock Text="{Binding SoLuongText}" FontSize="14" FontWeight="Bold" Foreground="#0F172A" Margin="0,4,0,0"/>
+                                                            <TextBlock Text="{Binding MucToiThieuText}" FontSize="11" Foreground="#94A3B8"/>
+                                                        </StackPanel>
+                                                        <StackPanel Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Right">
+                                                            <Border Background="{Binding TrangThaiBackground}" CornerRadius="11" Padding="8,4" HorizontalAlignment="Right">
+                                                                <TextBlock Text="{Binding TrangThaiText}" Foreground="{Binding TrangThaiColor}" FontSize="11" FontWeight="SemiBold"/>
+                                                            </Border>
+                                                            <TextBlock Text="{Binding GiaNhapText}" FontSize="12" Foreground="#0B63F6" FontWeight="Bold" HorizontalAlignment="Right" Margin="0,6,0,0"/>
+                                                        </StackPanel>
+                                                    </Grid>
+                                                </Border>
+                                            </Button>
+                                        </DataTemplate>
+                                    </ItemsControl.ItemTemplate>
+                                </ItemsControl>
+                            </ScrollViewer>
+                        </Grid>
+                    </Border>
+
+                    <Border Grid.Column="1" Style="{StaticResource CardStyle}">
+                        <ScrollViewer VerticalScrollBarVisibility="Auto">
+                            <StackPanel>
+                                <TextBlock Text="{Binding TieuDeQuanLyNguyenLieu}" FontSize="22" FontWeight="Bold" Foreground="#0F172A"/>
+                                <TextBlock Text="Chọn nguyên liệu bên trái để sửa, hoặc bấm Thêm nguyên liệu." FontSize="12" Foreground="#64748B" TextWrapping="Wrap" Margin="0,5,0,16"/>
+
+                                <TextBlock Text="Tên nguyên liệu" FontWeight="SemiBold" Foreground="#334155"/>
+                                <TextBox Text="{Binding TenNguyenLieuNhap, UpdateSourceTrigger=PropertyChanged}" Height="40" Margin="0,6,0,12" Padding="10,0" VerticalContentAlignment="Center"/>
+
+                                <TextBlock Text="Danh mục nguyên liệu" FontWeight="SemiBold" Foreground="#334155"/>
+                                <TextBox Text="{Binding DanhMucNguyenLieuNhap, UpdateSourceTrigger=PropertyChanged}" Height="40" Margin="0,6,0,12" Padding="10,0" VerticalContentAlignment="Center"/>
+
+                                <TextBlock Text="Đơn vị tính" FontWeight="SemiBold" Foreground="#334155"/>
+                                <ComboBox ItemsSource="{Binding DonVis}" SelectedItem="{Binding DonViNguyenLieuNhap, Mode=TwoWay}" Height="40" Margin="0,6,0,12"/>
+
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="10"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <StackPanel Grid.Column="0">
+                                        <TextBlock Text="Tồn hiện tại" FontWeight="SemiBold" Foreground="#334155"/>
+                                        <TextBox Text="{Binding TonHienTaiNhap, UpdateSourceTrigger=PropertyChanged}" Height="40" Margin="0,6,0,12" Padding="10,0" VerticalContentAlignment="Center"/>
+                                    </StackPanel>
+                                    <StackPanel Grid.Column="2">
+                                        <TextBlock Text="Tồn tối thiểu" FontWeight="SemiBold" Foreground="#334155"/>
+                                        <TextBox Text="{Binding TonToiThieuNhap, UpdateSourceTrigger=PropertyChanged}" Height="40" Margin="0,6,0,12" Padding="10,0" VerticalContentAlignment="Center"/>
+                                    </StackPanel>
+                                </Grid>
+
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="10"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <StackPanel Grid.Column="0">
+                                        <TextBlock Text="Tồn tối đa" FontWeight="SemiBold" Foreground="#334155"/>
+                                        <TextBox Text="{Binding TonToiDaNhap, UpdateSourceTrigger=PropertyChanged}" Height="40" Margin="0,6,0,12" Padding="10,0" VerticalContentAlignment="Center"/>
+                                    </StackPanel>
+                                    <StackPanel Grid.Column="2">
+                                        <TextBlock Text="Giá nhập cuối" FontWeight="SemiBold" Foreground="#334155"/>
+                                        <TextBox Text="{Binding GiaNhapCuoiNhap, UpdateSourceTrigger=PropertyChanged}" Height="40" Margin="0,6,0,12" Padding="10,0" VerticalContentAlignment="Center"/>
+                                    </StackPanel>
+                                </Grid>
+
+                                <TextBlock Text="Vị trí lưu kho" FontWeight="SemiBold" Foreground="#334155"/>
+                                <TextBox Text="{Binding ViTriNhap, UpdateSourceTrigger=PropertyChanged}" Height="40" Margin="0,6,0,12" Padding="10,0" VerticalContentAlignment="Center"/>
+
+                                <TextBlock Text="Ghi chú" FontWeight="SemiBold" Foreground="#334155"/>
+                                <TextBox Text="{Binding GhiChuNguyenLieuNhap, UpdateSourceTrigger=PropertyChanged}" Height="72" Margin="0,6,0,14" Padding="10" TextWrapping="Wrap" AcceptsReturn="True"/>
+
+                                <Button Content="{Binding TenNutLuuNguyenLieu}" Style="{StaticResource PrimaryButton}" Command="{Binding LuuNguyenLieuCommand}"/>
+                                <Grid Margin="0,10,0,0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="10"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Button Grid.Column="0" Content="Xóa nguyên liệu" Style="{StaticResource DangerButton}" Command="{Binding XoaNguyenLieuCommand}"/>
+                                    <Button Grid.Column="2" Content="Reset form" Style="{StaticResource LightButton}" Command="{Binding ResetNguyenLieuFormCommand}"/>
+                                </Grid>
+                            </StackPanel>
+                        </ScrollViewer>
+                    </Border>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</UserControl>

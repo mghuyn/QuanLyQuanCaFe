@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="68a1700a4570495f9c307e6cd79acb1d" Name="Diagram1" ZoomLevel="23">
+        <EntityTypeShape EntityType="QuanLyQuanCaPheDbModel.Addon" Width="1.5" PointX="30.75" PointY="15.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyQuanCaPheDbModel.AppSetting" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyQuanCaPheDbModel.AuditLog" Width="1.5" PointX="25.5" PointY="50.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyQuanCaPheDbModel.BanCafe" Width="1.5" PointX="5.25" PointY="38.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyQuanCaPheDbModel.BienTheSanPham" Width="1.5" PointX="6" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyQuanCaPheDbModel.CafeArea" Width="1.5" PointX="21" PointY="14.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyQuanCaPheDbModel.CafeTable" Width="1.5" PointX="23.25" PointY="13.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyQuanCaPheDbModel.CaiDatUngDung" Width="1.5" PointX="8.75" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyQuanCaPheDbModel.CaLam" Width="1.5" PointX="5.25" PointY="20.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyQuanCaPheDbModel.CashSession" Width="1.5" PointX="23.25" PointY="19" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyQuanCaPheDbModel.CustomerLevel" Width="1.5" PointX="21" PointY="36.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyQuanCaPheDbModel.CustomerPointTransaction" Width="1.5" PointX="30.75" PointY="25.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyQuanCaPheDbModel.Customer" Width="1.5" PointX="23.25" PointY="35.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyQuanCaPheDbModel.ChiPhi" Width="1.5" PointX="5.25" PointY="28.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyQuanCaPheDbModel.ChiTietCongThuc" Width="1.5" PointX="8.25" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyQuanCaPheDbModel.ChiTietHoaDonBan" Width="1.5" PointX="8.25" PointY="28.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyQuanCaPheDbModel.ChiTietHoaDonNhap" Width="1.5" PointX="16.5" PointY="28.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyQuanCaPheDbModel.ChiTietKiemKe" Width="1.5" PointX="7.5" PointY="53" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyQuanCaPheDbModel.ChiTietToppingHoaDon" Width="1.5" PointX="13.5" PointY="29" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyQuanCaPheDbModel.DanhMucChiPhi" Width="1.5" PointX="3" PointY="23.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyQuanCaPheDbModel.DanhMucSanPham" Width="1.5" PointX="1.5" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyQuanCaPheDbModel.DatBan" Width="1.5" PointX="5.25" PointY="33.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyQuanCaPheDbModel.DonViTinh" Width="1.5" PointX="3.75" PointY="12.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyQuanCaPheDbModel.Employee" Width="1.5" PointX="21" PointY="25.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyQuanCaPheDbModel.ExpenseCategory" Width="1.5" PointX="21" PointY="18.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyQuanCaPheDbModel.Expens" Width="1.5" PointX="23.25" PointY="27.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyQuanCaPheDbModel.GiaoDichDiemKhachHang" Width="1.5" PointX="9.75" PointY="33.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyQuanCaPheDbModel.GiaoDichKho" Width="1.5" PointX="8.25" PointY="23.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyQuanCaPheDbModel.GiaoDichThanhToan" Width="1.5" PointX="12.75" PointY="33.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyQuanCaPheDbModel.HangKhachHang" Width="1.5" PointX="0.75" PointY="44.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyQuanCaPheDbModel.HinhAnhSanPham" Width="1.5" PointX="6" PointY="16.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyQuanCaPheDbModel.HoaDonBan" Width="1.5" PointX="7.5" PointY="34.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyQuanCaPheDbModel.HoaDonNhap" Width="1.5" PointX="11.25" PointY="28" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyQuanCaPheDbModel.InventoryTransaction" Width="1.5" PointX="26.25" PointY="31.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyQuanCaPheDbModel.Ingredient" Width="1.5" PointX="29.25" PointY="9.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyQuanCaPheDbModel.KichCoSanPham" Width="1.5" PointX="3.75" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyQuanCaPheDbModel.KhachHang" Width="1.5" PointX="3" PointY="43.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyQuanCaPheDbModel.KhuVucQuan" Width="1.5" PointX="3" PointY="39.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyQuanCaPheDbModel.KhuyenMai" Width="1.5" PointX="5.25" PointY="64.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyQuanCaPheDbModel.MenuItemAddonMap" Width="1.5" PointX="33" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyQuanCaPheDbModel.MenuItemImage" Width="1.5" PointX="28.5" PointY="16.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyQuanCaPheDbModel.MenuItem" Width="1.5" PointX="26.25" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyQuanCaPheDbModel.MenuItemVariant" Width="1.5" PointX="28.5" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyQuanCaPheDbModel.Notification" Width="1.5" PointX="23.25" PointY="32" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyQuanCaPheDbModel.NguyenLieu" Width="1.5" PointX="6" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyQuanCaPheDbModel.NhaCungCap" Width="1.5" PointX="9" PointY="18.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyQuanCaPheDbModel.NhanVien" Width="1.5" PointX="3" PointY="26.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyQuanCaPheDbModel.NhatKyHeThong" Width="1.5" PointX="7.5" PointY="57.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyQuanCaPheDbModel.PaymentTransaction" Width="1.5" PointX="27.75" PointY="21.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyQuanCaPheDbModel.Permission" Width="1.5" PointX="18.75" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyQuanCaPheDbModel.ProductCategory" Width="1.5" PointX="24" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyQuanCaPheDbModel.ProductSize" Width="1.5" PointX="26.25" PointY="16.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyQuanCaPheDbModel.Promotion" Width="1.5" PointX="23.25" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyQuanCaPheDbModel.PurchaseOrderItem" Width="1.5" PointX="31.5" PointY="29.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyQuanCaPheDbModel.PurchaseOrder" Width="1.5" PointX="28.25" PointY="25.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyQuanCaPheDbModel.PhanQuyenVaiTro" Width="1.5" PointX="6" PointY="25.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyQuanCaPheDbModel.PhienThu" Width="1.5" PointX="5.25" PointY="48" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyQuanCaPheDbModel.PhieuKiemKe" Width="1.5" PointX="5.25" PointY="52.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyQuanCaPheDbModel.Quyen" Width="1.5" PointX="3.75" PointY="17" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyQuanCaPheDbModel.RecipeDetail" Width="1.5" PointX="31.5" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyQuanCaPheDbModel.Reservation" Width="1.5" PointX="29.25" PointY="31.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyQuanCaPheDbModel.RolePermission" Width="1.5" PointX="21" PointY="21.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyQuanCaPheDbModel.Role" Width="1.5" PointX="18.75" PointY="27.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyQuanCaPheDbModel.SalesOrderItemAddon" Width="1.5" PointX="33" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyQuanCaPheDbModel.SalesOrderItem" Width="1.5" PointX="30.75" PointY="19.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyQuanCaPheDbModel.SalesOrder" Width="1.5" PointX="25.5" PointY="21.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyQuanCaPheDbModel.SanPham" Width="1.5" PointX="3.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyQuanCaPheDbModel.SanPhamTopping" Width="1.5" PointX="13.5" PointY="12.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyQuanCaPheDbModel.StockTakeItem" Width="1.5" PointX="25.5" PointY="46.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyQuanCaPheDbModel.StockTakeSession" Width="1.5" PointX="23.25" PointY="45.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyQuanCaPheDbModel.Supplier" Width="1.5" PointX="26" PointY="36.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyQuanCaPheDbModel.TaiKhoan" Width="1.5" PointX="5.25" PointY="56.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyQuanCaPheDbModel.Topping" Width="1.5" PointX="11.25" PointY="23.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyQuanCaPheDbModel.ThongBao" Width="1.5" PointX="5.25" PointY="61.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyQuanCaPheDbModel.Unit" Width="1.5" PointX="27" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyQuanCaPheDbModel.UserAccount" Width="1.5" PointX="23.25" PointY="50" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyQuanCaPheDbModel.VaiTro" Width="1.5" PointX="0.75" PointY="28.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyQuanCaPheDbModel.WorkShift" Width="1.5" PointX="23.25" PointY="54.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyQuanCaPheDbModel.vw_BestSellingMenuItems" Width="1.5" PointX="0.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyQuanCaPheDbModel.vw_CashSessionSummary" Width="1.5" PointX="10.75" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyQuanCaPheDbModel.vw_DanhMucMenu" Width="1.5" PointX="10.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyQuanCaPheDbModel.vw_DoanhThuThangTheoDanhMuc" Width="1.5" PointX="8.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyQuanCaPheDbModel.vw_HangDoiPhaChe" Width="1.5" PointX="10.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyQuanCaPheDbModel.vw_InventoryStatus" Width="1.5" PointX="12.75" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyQuanCaPheDbModel.vw_KitchenQueue" Width="1.5" PointX="0.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyQuanCaPheDbModel.vw_MenuCatalog" Width="1.5" PointX="12.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyQuanCaPheDbModel.vw_MonthlyRevenueByCategory" Width="1.5" PointX="12.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyQuanCaPheDbModel.vw_PurchaseSummary" Width="1.5" PointX="14.75" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyQuanCaPheDbModel.vw_SanPhamBanChay" Width="1.5" PointX="14.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyQuanCaPheDbModel.vw_SoDoBan" Width="1.5" PointX="15.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyQuanCaPheDbModel.vw_TableMap" Width="1.5" PointX="12.75" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyQuanCaPheDbModel.vw_TodayDashboard" Width="1.5" PointX="15.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyQuanCaPheDbModel.vw_TongHopNhapHang" Width="1.5" PointX="16.75" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyQuanCaPheDbModel.vw_TongHopPhienThu" Width="1.5" PointX="17.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyQuanCaPheDbModel.vw_TongQuanHomNay" Width="1.5" PointX="17.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyQuanCaPheDbModel.vw_TrangThaiKho" Width="1.5" PointX="17.75" PointY="15.75" IsExpanded="true" />
+        <AssociationConnector Association="QuanLyQuanCaPheDbModel.FK_MenuItemAddonMaps_Addons" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanCaPheDbModel.FK_SalesOrderItemAddons_Addons" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanCaPheDbModel.FK_AuditLogs_UserAccounts" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanCaPheDbModel.FK_BanCafes_KhuVucQuans" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanCaPheDbModel.FK_DatBans_BanCafes" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanCaPheDbModel.FK_HoaDonBans_BanCafes" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanCaPheDbModel.FK_BienTheSanPhams_KichCoSanPhams" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanCaPheDbModel.FK_BienTheSanPhams_SanPhams" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanCaPheDbModel.FK_ChiTietCongThucs_BienTheSanPhams" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanCaPheDbModel.FK_ChiTietHoaDonBans_BienTheSanPhams" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanCaPheDbModel.FK_CafeTables_CafeAreas" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanCaPheDbModel.FK_Reservations_CafeTables" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanCaPheDbModel.FK_SalesOrders_CafeTables" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanCaPheDbModel.FK_CaLams_NhanViens" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanCaPheDbModel.FK_CashSessions_Employees" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanCaPheDbModel.FK_SalesOrders_CashSessions" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanCaPheDbModel.FK_Customers_CustomerLevels" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanCaPheDbModel.FK_CustomerPointTransactions_Customers" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanCaPheDbModel.FK_CustomerPointTransactions_Employees" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanCaPheDbModel.FK_CustomerPointTransactions_SalesOrders" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanCaPheDbModel.FK_Reservations_Customers" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanCaPheDbModel.FK_SalesOrders_Customers" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanCaPheDbModel.FK_ChiPhis_DanhMucChiPhis" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanCaPheDbModel.FK_ChiPhis_NhanViens" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanCaPheDbModel.FK_ChiTietCongThucs_NguyenLieus" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanCaPheDbModel.FK_ChiTietHoaDonBans_HoaDonBans" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanCaPheDbModel.FK_ChiTietHoaDonBans_NhanViens" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanCaPheDbModel.FK_ChiTietToppingHoaDons_ChiTietHoaDonBans" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanCaPheDbModel.FK_ChiTietHoaDonNhaps_HoaDonNhaps" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanCaPheDbModel.FK_ChiTietHoaDonNhaps_NguyenLieus" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanCaPheDbModel.FK_ChiTietKiemKes_NguyenLieus" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanCaPheDbModel.FK_ChiTietKiemKes_Sessions" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanCaPheDbModel.FK_ChiTietToppingHoaDons_Toppings" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanCaPheDbModel.FK_DanhMucSanPhams_Parent" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanCaPheDbModel.FK_SanPhams_DanhMucSanPhams" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanCaPheDbModel.FK_DatBans_KhachHangs" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanCaPheDbModel.FK_DatBans_NhanViens" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanCaPheDbModel.FK_HoaDonBans_DatBans" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanCaPheDbModel.FK_NguyenLieus_DonViTinhs" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanCaPheDbModel.FK_Employees_Roles" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanCaPheDbModel.FK_Expenses_Employees" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanCaPheDbModel.FK_InventoryTransactions_Employees" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanCaPheDbModel.FK_Notifications_Employees" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanCaPheDbModel.FK_PaymentTransactions_Employees" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanCaPheDbModel.FK_PurchaseOrders_Employees" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanCaPheDbModel.FK_Reservations_Employees" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanCaPheDbModel.FK_SalesOrderItems_Employees" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanCaPheDbModel.FK_SalesOrders_CancelledByEmployee" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanCaPheDbModel.FK_SalesOrders_Employees" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanCaPheDbModel.FK_StockTakeSessions_ApprovedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanCaPheDbModel.FK_StockTakeSessions_CreatedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanCaPheDbModel.FK_UserAccounts_Employees" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanCaPheDbModel.FK_WorkShifts_Employees" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanCaPheDbModel.FK_Expenses_ExpenseCategories" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanCaPheDbModel.FK_GiaoDichDiemKhachHangs_HoaDonBans" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanCaPheDbModel.FK_GiaoDichDiemKhachHangs_KhachHangs" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanCaPheDbModel.FK_GiaoDichDiemKhachHangs_NhanViens" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanCaPheDbModel.FK_GiaoDichKhos_NguyenLieus" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanCaPheDbModel.FK_GiaoDichKhos_NhanViens" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanCaPheDbModel.FK_GiaoDichThanhToans_HoaDonBans" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanCaPheDbModel.FK_GiaoDichThanhToans_NhanViens" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanCaPheDbModel.FK_KhachHangs_HangKhachHangs" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanCaPheDbModel.FK_HinhAnhSanPhams_SanPhams" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanCaPheDbModel.FK_HoaDonBans_CancelledByEmployee" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanCaPheDbModel.FK_HoaDonBans_KhachHangs" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanCaPheDbModel.FK_HoaDonBans_KhuyenMais" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanCaPheDbModel.FK_HoaDonBans_NhanViens" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanCaPheDbModel.FK_HoaDonBans_PhienThus" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanCaPheDbModel.FK_HoaDonNhaps_NhaCungCaps" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanCaPheDbModel.FK_HoaDonNhaps_NhanViens" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanCaPheDbModel.FK_InventoryTransactions_Ingredients" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanCaPheDbModel.FK_Ingredients_Units" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanCaPheDbModel.FK_PurchaseOrderItems_Ingredients" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanCaPheDbModel.FK_RecipeDetails_Ingredients" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanCaPheDbModel.FK_StockTakeItems_Ingredients" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanCaPheDbModel.FK_MenuItemAddonMaps_MenuItems" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanCaPheDbModel.FK_MenuItemImages_MenuItems" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanCaPheDbModel.FK_MenuItems_ProductCategories" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanCaPheDbModel.FK_MenuItemVariants_MenuItems" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanCaPheDbModel.FK_MenuItemVariants_ProductSizes" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanCaPheDbModel.FK_RecipeDetails_MenuItemVariants" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanCaPheDbModel.FK_SalesOrderItems_MenuItemVariants" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanCaPheDbModel.FK_NhanViens_VaiTros" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanCaPheDbModel.FK_PhienThus_NhanViens" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanCaPheDbModel.FK_PhieuKiemKes_ApprovedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanCaPheDbModel.FK_PhieuKiemKes_CreatedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanCaPheDbModel.FK_TaiKhoans_NhanViens" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanCaPheDbModel.FK_ThongBaos_NhanViens" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanCaPheDbModel.FK_NhatKyHeThongs_TaiKhoans" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanCaPheDbModel.FK_PaymentTransactions_SalesOrders" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanCaPheDbModel.FK_RolePermissions_Permissions" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanCaPheDbModel.FK_ProductCategories_Parent" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanCaPheDbModel.FK_SalesOrders_Promotions" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanCaPheDbModel.FK_PurchaseOrderItems_PurchaseOrders" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanCaPheDbModel.FK_PurchaseOrders_Suppliers" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanCaPheDbModel.FK_PhanQuyenVaiTros_Quyens" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanCaPheDbModel.FK_PhanQuyenVaiTros_VaiTros" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanCaPheDbModel.FK_SalesOrders_Reservations" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanCaPheDbModel.FK_RolePermissions_Roles" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanCaPheDbModel.FK_SalesOrderItemAddons_SalesOrderItems" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanCaPheDbModel.FK_SalesOrderItems_SalesOrders" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanCaPheDbModel.FK_SanPhamToppings_SanPhams" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanCaPheDbModel.FK_SanPhamToppings_Toppings" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanCaPheDbModel.FK_StockTakeItems_Sessions" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="QuanLyQuanCaPheDbModel.ChiTietPhieuKho" Width="1.5" PointX="8.25" PointY="16.875" />
+        <EntityTypeShape EntityType="QuanLyQuanCaPheDbModel.PhieuKho" Width="1.5" PointX="6" PointY="0.75" />
+        <AssociationConnector Association="QuanLyQuanCaPheDbModel.FK_ChiTietPhieuKhos_NguyenLieus" />
+        <AssociationConnector Association="QuanLyQuanCaPheDbModel.FK_ChiTietPhieuKhos_PhieuKhos" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

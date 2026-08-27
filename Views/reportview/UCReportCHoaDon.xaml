@@ -1,0 +1,23 @@
+﻿<UserControl x:Class="QuanLyQuanCaFe.Views.Pages.UCReportCHoaDon"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:wfi="clr-namespace:System.Windows.Forms.Integration;assembly=WindowsFormsIntegration"
+             Background="#F6F8FC">
+
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Button Grid.Row="0"
+                Content="Show Report"
+                Width="120"
+                Height="36"
+                Margin="0,0,0,10"
+                Click="btnShowReport_Click"/>
+
+        <wfi:WindowsFormsHost x:Name="ReportHost"
+                              Grid.Row="1"/>
+    </Grid>
+</UserControl>
